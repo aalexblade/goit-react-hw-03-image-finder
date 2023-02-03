@@ -6,6 +6,7 @@ export const App = () => {
   return (
     <Wrapper>
       <Searchbar/>
+      
     </Wrapper>
   );
 };
