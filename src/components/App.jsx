@@ -1,14 +1,14 @@
-import { React, Component } from 'react';
-import { fetchPictures } from 'gallery-api/gallery-api';
-import { Wrapper } from "./Searchbar/Searchbar.styled";
-import { Searchbar } from "./Searchbar/Searchbar";
-import { Modal } from "./Modal/Modal";
-import { Loader } from "./Loader/Loader";
-import { Button } from "./Button/Button";
+import  { React, Component } from 'react';
+import { fetchPictures } from 'services/gallery-api';
+
+import { Searchbar } from './Searchbar/Searchbar';
 import { ImageGallery } from './ImageGallery/ImageGallery';
+import { Modal } from './Modal/Modal';
+import { Loader } from './Loader/Loader';
+import { Button } from './Button/Button';
+
+import { Wrapper } from './Searchbar/Searchbar.styled';
 import GlobalStyle from 'globalStyles';
-
-
 
 export class App extends Component {
   state = {

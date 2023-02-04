@@ -1,16 +1,14 @@
-import { React, Component } from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import {
-  SearchContainer,
+  SearchbarContainer,
   SearchForm,
-  SearchButton,
-  SearchLable,
-  SeartchImpot,  
-} from "./Searchbar.styled";
-
+  SearchFormBtn,
+  SearchFormBtnLabel,
+  SearchFormInput,
+} from './Searchbar.styled';
 
 export class Searchbar extends Component {
-  
   state = {
     search: '',
   };
@@ -25,7 +23,7 @@ export class Searchbar extends Component {
     event.preventDefault();
     const { search } = this.state;
 
-    this.porops.onSubmit(search);
+    this.props.onSubmit(search);
     this.setState({
       search: '',
     });
@@ -34,13 +32,13 @@ export class Searchbar extends Component {
   render() {
     const { search } = this.state;
     return (
-      <SearchContainer>
-        <SearchForm>
-        <SearchButton type="submit">
-         <SearchLable>Search</SearchLable>
-          </SearchButton>
-          
-          <SeartchImpot
+      <SearchbarContainer>
+        <SearchForm onSubmit={this.handleSubmit}>
+          <SearchFormBtn type="submit">
+            <SearchFormBtnLabel>Search</SearchFormBtnLabel>
+          </SearchFormBtn>
+
+          <SearchFormInput
             type="text"
             autoComplete="off"
             autoFocus
@@ -48,8 +46,8 @@ export class Searchbar extends Component {
             value={search}
             onChange={this.searchResult}
           />
-         </SearchForm>
-      </SearchContainer>
+        </SearchForm>
+      </SearchbarContainer>
     );
   }
 }
