@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { React, Component } from "react";
 import PropTypes from "prop-types";
 import {
   SearchContainer,
@@ -7,9 +7,6 @@ import {
   SearchLable,
   SeartchImpot,  
 } from "./Searchbar.styled";
-
-
-
 
 
 export class Searchbar extends Component {
